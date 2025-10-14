@@ -1,1 +1,9 @@
+# gen_sample_pcap.py (run locally with scapy installed)
+from scapy.all import IP, TCP, Ether, wrpcap
+pkts = []
+for i in range(100):
+    p = Ether()/IP(src=f"192.168.1.{(i%10)+2}", dst=f"10.0.0.{(i%5)+2}")/TCP(sport=1024+i, dport=80)
+    pkts.append(p)
+wrpcap("sample_data/sample.pcap", pkts)
+print("sample_data/sample.pcap written (100 pkts)")
 
