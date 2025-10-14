@@ -1,3 +1,4 @@
-streamlit==1.26.0
+# ✅ minimal, prebuilt wheels only
+streamlit==1.25.0
 scapy==2.5.0
 pandas==2.2.3
